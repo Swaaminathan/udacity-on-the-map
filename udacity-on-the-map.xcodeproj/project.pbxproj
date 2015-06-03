@@ -16,6 +16,8 @@
 		461C1F9F1B05806600DBCEA4 /* udacity_on_the_mapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461C1F9E1B05806600DBCEA4 /* udacity_on_the_mapTests.swift */; };
 		461C1FA91B0AEB6400DBCEA4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461C1FA81B0AEB6400DBCEA4 /* LoginViewController.swift */; };
 		461C1FAD1B0AF3DD00DBCEA4 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461C1FAC1B0AF3DD00DBCEA4 /* LoginTextField.swift */; };
+		46B47B191B0FAA0200DF1736 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B47B181B0FAA0200DF1736 /* User.swift */; };
+		46B8A5981B1D642400DDABAF /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8A5971B1D642400DDABAF /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,11 @@
 		461C1F9E1B05806600DBCEA4 /* udacity_on_the_mapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = udacity_on_the_mapTests.swift; sourceTree = "<group>"; };
 		461C1FA81B0AEB6400DBCEA4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		461C1FAC1B0AF3DD00DBCEA4 /* LoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
+		46B47B181B0FAA0200DF1736 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		46B8A5931B1D60BE00DDABAF /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		46B8A5941B1D60BE00DDABAF /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		46B8A5951B1D60BE00DDABAF /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		46B8A5971B1D642400DDABAF /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +90,10 @@
 		461C1F831B05806500DBCEA4 /* udacity-on-the-map */ = {
 			isa = PBXGroup;
 			children = (
-				461C1FAB1B0AF3C100DBCEA4 /* controls */,
-				461C1FAA1B0AEB6800DBCEA4 /* controllers */,
+				46B8A5961B1D60C200DDABAF /* Font */,
+				46B47B171B0FA7F100DF1736 /* Models */,
+				461C1FAB1B0AF3C100DBCEA4 /* Controls */,
+				461C1FAA1B0AEB6800DBCEA4 /* Controllers */,
 				461C1F861B05806500DBCEA4 /* AppDelegate.swift */,
 				461C1F8C1B05806500DBCEA4 /* Main.storyboard */,
 				461C1F8F1B05806500DBCEA4 /* Images.xcassets */,
@@ -119,22 +128,41 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		461C1FAA1B0AEB6800DBCEA4 /* controllers */ = {
+		461C1FAA1B0AEB6800DBCEA4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				461C1FA81B0AEB6400DBCEA4 /* LoginViewController.swift */,
 				461C1F881B05806500DBCEA4 /* MapViewController.swift */,
 				461C1F8A1B05806500DBCEA4 /* TableViewController.swift */,
 			);
-			name = controllers;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
-		461C1FAB1B0AF3C100DBCEA4 /* controls */ = {
+		461C1FAB1B0AF3C100DBCEA4 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
 				461C1FAC1B0AF3DD00DBCEA4 /* LoginTextField.swift */,
 			);
-			name = controls;
+			name = Controls;
+			sourceTree = "<group>";
+		};
+		46B47B171B0FA7F100DF1736 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				46B47B181B0FAA0200DF1736 /* User.swift */,
+				46B8A5971B1D642400DDABAF /* Location.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		46B8A5961B1D60C200DDABAF /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				46B8A5931B1D60BE00DDABAF /* Roboto-Medium.ttf */,
+				46B8A5941B1D60BE00DDABAF /* Roboto-Regular.ttf */,
+				46B8A5951B1D60BE00DDABAF /* Roboto-Thin.ttf */,
+			);
+			name = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,9 +267,11 @@
 			files = (
 				461C1FA91B0AEB6400DBCEA4 /* LoginViewController.swift in Sources */,
 				461C1F8B1B05806500DBCEA4 /* TableViewController.swift in Sources */,
+				46B47B191B0FAA0200DF1736 /* User.swift in Sources */,
 				461C1F871B05806500DBCEA4 /* AppDelegate.swift in Sources */,
 				461C1FAD1B0AF3DD00DBCEA4 /* LoginTextField.swift in Sources */,
 				461C1F891B05806500DBCEA4 /* MapViewController.swift in Sources */,
+				46B8A5981B1D642400DDABAF /* Location.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +469,7 @@
 				461C1FA41B05806600DBCEA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		461C1FA51B05806600DBCEA4 /* Build configuration list for PBXNativeTarget "udacity-on-the-mapTests" */ = {
 			isa = XCConfigurationList;
@@ -447,6 +478,7 @@
 				461C1FA71B05806600DBCEA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -10,9 +10,12 @@ import UIKit
 
 class MapViewController: UIViewController {
 
+    @IBOutlet var pinButtonItem: UIBarButtonItem!
+    @IBOutlet var refreshButtonItem: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        navigationItem.setRightBarButtonItems([refreshButtonItem, pinButtonItem], animated: false)
     }
 
     override func didReceiveMemoryWarning() {

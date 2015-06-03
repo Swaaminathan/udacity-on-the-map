@@ -12,26 +12,55 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailTextField: LoginTextField!
     @IBOutlet weak var passwordTextField: LoginTextField!
+    @IBOutlet weak var loginLabel: UILabel!
+    @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         emailTextField.delegate = self
         passwordTextField.delegate = self
+        loginButton.setTitle("Logging in.... Please wait.", forState: .Disabled)
     }
     
-    /// Runs when the view appears
     override func viewWillAppear(animated: Bool) {
         
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
+        
     }
     
-    /// Runs when the view disappears
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         unsubscribeFromKeyboardNotifications()
     }
     
+    @IBAction func didPressLogIn(sender: UIButton) {
+        
+        setFormState(true)
+        if let username = emailTextField.text, password = passwordTextField.text {
+            User.logIn(username, password: password) { (success, errorMessage) in
+                self.setFormState(false, errorMessage: errorMessage)
+                if success {
+                    self.performSegueWithIdentifier("showTabs", sender: self)
+                }
+            }
+        }
+    }
+    
+    private func setFormState(loggingIn: Bool, errorMessage: String? = nil) {
+        emailTextField.enabled = !loggingIn
+        passwordTextField.enabled = !loggingIn
+        loginButton.enabled = !loggingIn
+        if let message = errorMessage {
+            let alertController = UIAlertController(title: "Authentication Error", message: message, preferredStyle: .Alert)
+            let OkAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+            alertController.addAction(OkAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
 
+    /// Move between fields or hide the keyboard when return is pressed
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField == emailTextField {
             passwordTextField.becomeFirstResponder()
@@ -41,7 +70,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return true
     }
 
-    // MARK: - Keyboard
+    // MARK: - Keyboard methods
     func subscribeToKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="M37-Ne-Khe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="M37-Ne-Khe">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Map-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" userLabel="Map" customClass="MapViewController" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" userLabel="Map" customClass="MapViewController" customModule="udacity_on_the_map" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -17,38 +17,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="221" y="279" width="158" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="203" y="329" width="195" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="C4e-vi-iOr">
+                                <rect key="frame" x="0.0" y="49" width="600" height="502"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
+                            <constraint firstAttribute="centerY" secondItem="C4e-vi-iOr" secondAttribute="centerY" id="4x3-JT-jr5"/>
+                            <constraint firstItem="C4e-vi-iOr" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="-15" id="PBF-je-X15"/>
+                            <constraint firstAttribute="centerX" secondItem="C4e-vi-iOr" secondAttribute="centerX" id="mYu-HQ-wac"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="C4e-vi-iOr" secondAttribute="bottom" id="rpJ-W4-X7N"/>
+                            <constraint firstItem="C4e-vi-iOr" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" id="tGo-s1-ajC"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <navigationItem key="navigationItem" id="S8J-c9-uo1"/>
+                    <connections>
+                        <outlet property="pinButtonItem" destination="wKe-ks-oAX" id="TwF-5R-Dur"/>
+                        <outlet property="refreshButtonItem" destination="9ox-SB-4rs" id="70J-fA-frQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+                <barButtonItem image="pin" id="wKe-ks-oAX"/>
+                <barButtonItem tag="1" systemItem="refresh" id="9ox-SB-4rs"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="-768"/>
+            <point key="canvasLocation" x="812" y="-768"/>
         </scene>
         <!-- Table-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" userLabel=" Table" customClass="SecondViewController" customModule="udacity_on_the_map" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" userLabel=" Table" customClass="TableViewController" customModule="udacity_on_the_map" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -79,11 +76,17 @@
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <navigationItem key="navigationItem" id="cf1-cW-TV6"/>
+                    <connections>
+                        <outlet property="pinButtonItem" destination="NmV-1s-Saa" id="LPV-Yb-4nR"/>
+                        <outlet property="refreshButtonItem" destination="5Jg-qr-xs4" id="TCN-Rs-0vG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+                <barButtonItem systemItem="refresh" id="5Jg-qr-xs4"/>
+                <barButtonItem tag="1" image="pin" id="NmV-1s-Saa"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="784"/>
+            <point key="canvasLocation" x="812" y="784"/>
         </scene>
         <!--Login-->
         <scene sceneID="Ifu-Yg-hnb">
@@ -99,6 +102,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="b1X-13-QkS">
                                 <rect key="frame" x="0.0" y="-429" width="600" height="1200"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login to Udacity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwv-cP-dIg">
                                 <rect key="frame" x="237" y="300" width="127" height="21"/>
@@ -149,6 +153,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="didPressLogIn:" destination="M37-Ne-Khe" eventType="touchUpInside" id="fBO-fi-ZKa"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account? Sign up" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRa-h8-f3g">
                                 <rect key="frame" x="177" y="449" width="247" height="21"/>
@@ -180,6 +187,8 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="T3S-lU-o9K" id="1Xs-Gc-aNS"/>
+                        <outlet property="loginButton" destination="HDH-zt-dqh" id="iX7-Ff-PbM"/>
+                        <outlet property="loginLabel" destination="Bwv-cP-dIg" id="CBK-wA-c9h"/>
                         <outlet property="passwordTextField" destination="dDi-xv-F0x" id="ct3-eX-3eB"/>
                         <segue destination="49e-Tb-3d3" kind="show" identifier="showTabs" id="i0G-bE-oeT"/>
                     </connections>
@@ -199,18 +208,57 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="c4S-ny-5EA" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="ncX-Ww-O7p" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
+        <!--Map Nav-->
+        <scene sceneID="ngz-si-Se7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c4S-ny-5EA" userLabel="Map Nav" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" image="map" id="acW-dT-cKf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eXs-Y5-K44">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="szi-PR-Hr7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vbf-Bi-a1E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="-768"/>
+        </scene>
+        <!--Table Nav-->
+        <scene sceneID="91a-bJ-CKB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ncX-Ww-O7p" userLabel="Table Nav" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="List" image="Table" id="cPa-gy-q4n"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EFv-oz-e2j">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="Wgd-q7-Y27"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oNd-Vh-rb1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="784"/>
+        </scene>
     </scenes>
     <resources>
         <image name="LaunchImage" width="1536" height="2048"/>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="Table" width="32" height="32"/>
+        <image name="map" width="32" height="32"/>
+        <image name="pin" width="32" height="32"/>
     </resources>
 </document>
