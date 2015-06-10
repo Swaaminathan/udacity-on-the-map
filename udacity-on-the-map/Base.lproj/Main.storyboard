@@ -18,13 +18,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="C4e-vi-iOr">
-                                <rect key="frame" x="0.0" y="49" width="600" height="502"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="C4e-vi-iOr" secondAttribute="centerY" id="4x3-JT-jr5"/>
-                            <constraint firstItem="C4e-vi-iOr" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="-15" id="PBF-je-X15"/>
+                            <constraint firstItem="C4e-vi-iOr" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="PBF-je-X15"/>
                             <constraint firstAttribute="centerX" secondItem="C4e-vi-iOr" secondAttribute="centerX" id="mYu-HQ-wac"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="C4e-vi-iOr" secondAttribute="bottom" id="rpJ-W4-X7N"/>
                             <constraint firstItem="C4e-vi-iOr" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" id="tGo-s1-ajC"/>
@@ -58,13 +57,13 @@
                                 <rect key="frame" x="195" y="279" width="210" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
                                 <rect key="frame" x="192" y="329" width="216" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>

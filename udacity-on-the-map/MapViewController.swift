@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MapKit
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet var pinButtonItem: UIBarButtonItem!
     @IBOutlet var refreshButtonItem: UIBarButtonItem!
