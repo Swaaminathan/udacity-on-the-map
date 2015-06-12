@@ -90,7 +90,6 @@ class StudentLocation {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let bodyString = "{\"uniqueKey\": \"\(User.key)\", \"firstName\": \"\(User.firstName)\", \"lastName\": \"\(User.lastName)\",\"mapString\": \"\(mapString)\", \"mediaURL\": \"\(mediaURL)\",\"latitude\": \(latitude), \"longitude\": \(longitude)}"
         request.HTTPBody = bodyString.dataUsingEncoding(NSUTF8StringEncoding)
-        println(bodyString)
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(request) { data, response, error in
             if error != nil {

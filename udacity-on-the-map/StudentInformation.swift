@@ -29,10 +29,6 @@ class StudentInformation: NSObject, MKAnnotation {
         
         title = "\(firstName) \(lastName)"
         subtitle = mediaURL
-        
-        if let createdAt = data["createdAt"] as? String {
-            println(createdAt)
-        }
     }
     
     class func isDataValid(data: NSDictionary) -> Bool {

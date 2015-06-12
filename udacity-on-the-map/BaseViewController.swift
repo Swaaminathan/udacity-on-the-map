@@ -19,9 +19,7 @@ class BaseViewController: UIViewController {
             message = errors[0].localizedDescription
         }
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        let OkAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-            self.dismissViewControllerAnimated(true, completion: nil)
-        }
+        let OkAction = UIAlertAction(title: "OK", style: .Default) { (action) in }
         alertController.addAction(OkAction)
         self.presentViewController(alertController, animated: true, completion: nil)       
     }

@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class PostLocationViewController: BaseViewController, MKMapViewDelegate {
+class PostLocationViewController: BaseViewController, MKMapViewDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var locationEntryView: UIView!
     @IBOutlet weak var mapContainerView: UIView!
@@ -31,6 +31,13 @@ class PostLocationViewController: BaseViewController, MKMapViewDelegate {
         mapView.delegate = self
         var tapGesture = UITapGestureRecognizer(target: self, action: "didTapTextContainer:")
         urlTextContainer.addGestureRecognizer(tapGesture)
+        locationTextField.delegate = self
+        urlTextField.delegate = self
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     func didTapTextContainer(sender: AnyObject) {

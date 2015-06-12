@@ -187,7 +187,7 @@
                                                 <rect key="frame" x="0.0" y="60" width="600" height="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="0.39607843139999999" green="0.58039215690000001" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -433,7 +433,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
                 <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
@@ -446,13 +445,13 @@
                         <segue destination="ncX-Ww-O7p" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
         <!--Map Nav-->
         <scene sceneID="ngz-si-Se7">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vbf-Bi-a1E" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c4S-ny-5EA" userLabel="Map Nav" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="map" id="acW-dT-cKf"/>
                     <toolbarItems/>
@@ -465,13 +464,13 @@
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="szi-PR-Hr7"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vbf-Bi-a1E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="-768"/>
         </scene>
         <!--Table Nav-->
         <scene sceneID="91a-bJ-CKB">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oNd-Vh-rb1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ncX-Ww-O7p" userLabel="Table Nav" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="List" image="Table" id="cPa-gy-q4n"/>
                     <toolbarItems/>
@@ -484,6 +483,7 @@
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="Wgd-q7-Y27"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oNd-Vh-rb1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="784"/>
         </scene>
