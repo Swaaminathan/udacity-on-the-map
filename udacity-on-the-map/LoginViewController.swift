@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: BaseViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailTextField: LoginTextField!
     @IBOutlet weak var passwordTextField: LoginTextField!
@@ -19,6 +19,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         loginButton.setTitle("Logging in.... Please wait.", forState: .Disabled)
+        loginButton.setTitle("Log in", forState: .Normal)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -26,6 +27,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
         
+        // The title was sticking in the "logging in..." state
+        loginButton.layoutSubviews()
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -40,6 +43,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             User.logIn(username, password: password) { (success, errorMessage) in
                 self.setFormState(false, errorMessage: errorMessage)
                 if success {
+                    self.setFormState(false)
                     self.performSegueWithIdentifier("showTabs", sender: self)
                 }
             }
@@ -51,12 +55,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.enabled = !loggingIn
         loginButton.enabled = !loggingIn
         if let message = errorMessage {
-            let alertController = UIAlertController(title: "Authentication Error", message: message, preferredStyle: .Alert)
-            let OkAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-                self.dismissViewControllerAnimated(true, completion: nil)
-            }
-            alertController.addAction(OkAction)
-            self.presentViewController(alertController, animated: true, completion: nil)
+            showErrorAlert("Authentication Error", defaultMessage: message, errors: [])
         }
     }
 

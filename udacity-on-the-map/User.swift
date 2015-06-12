@@ -96,6 +96,8 @@ class User {
                 let firstName = user["first_name"] as? String,
                 let lastName = user["last_name"] as? String
             {
+                self.firstName = firstName
+                self.lastName = lastName
                 didComplete(success: true)
             }
         }

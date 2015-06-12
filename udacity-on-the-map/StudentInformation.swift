@@ -9,32 +9,42 @@
 import Foundation
 import MapKit
 
-struct StudentInformation {
-    var coordinate: CLLocationCoordinate2D!
-    var firstName: String!
-    var lastName: String!
-    var mapString: String!
-    var mediaUrl: String!
-    var uniqueKey: String!
+class StudentInformation: NSObject, MKAnnotation {
+    var coordinate: CLLocationCoordinate2D
+    var firstName: String
+    var lastName: String
+    var mediaURL: String
+    
+    var title: String
+    var subtitle: String
     
     init(data: NSDictionary) {
+        coordinate = CLLocationCoordinate2D(
+            latitude: data["latitude"] as! Double!,
+            longitude: data["longitude"] as! Double
+        )
+        firstName = data["firstName"] as! String
+        lastName = data["lastName"] as! String
+        mediaURL = data["mediaURL"] as! String
+        
+        title = "\(firstName) \(lastName)"
+        subtitle = mediaURL
+        
+        if let createdAt = data["createdAt"] as? String {
+            println(createdAt)
+        }
+    }
+    
+    class func isDataValid(data: NSDictionary) -> Bool {
         if let latitude = data["latitude"] as? Double,
             let longitude = data["longitude"] as? Double,
             let firstName = data["firstName"] as? String,
             let lastName = data["lastName"] as? String,
-            let mapString = data["mapString"] as? String,
-            let mediaUrl = data["mediaUrl"] as? String,
-            let uniqueKey = data["uniqueKey"] as? String
+            let mediaURL = data["mediaURL"] as? String
         {
-            self.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-            self.firstName = firstName
-            self.lastName = lastName
-            self.mapString = mapString
-            self.mediaUrl = mediaUrl
-            self.uniqueKey = uniqueKey
-        } else {
-            // error
+            return true
         }
+        return false
     }
 }
 
